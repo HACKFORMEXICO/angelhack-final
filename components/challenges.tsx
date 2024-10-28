@@ -1,5 +1,5 @@
 'use client'
-
+import { useRouter } from 'next/navigation'
 import Image from 'next/image'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
@@ -9,9 +9,25 @@ interface ChallengeProps {
   image: string;
   description: string;
   mascot: string;
+  activityId: string;
 }
 
-export function Challenge({ title, image, description, mascot }: ChallengeProps) {
+export function Challenge({ title, image, description, mascot, activityId }: ChallengeProps) {
+  const router = useRouter()
+
+  const handleSubmit = () => {
+    const submitPath = `/activities/${activityId}/submit`
+    console.log('Navigating to:', submitPath)
+    
+    // Try using window.location as a fallback
+    try {
+      router.push(submitPath)
+    } catch (error) {
+      console.error('Router push failed:', error)
+      window.location.href = submitPath
+    }
+  }
+
   return (
     <div className="flex justify-center items-center min-h-screen bg-green-100 p-4">
       <Card className="w-full max-w-md bg-green-200 overflow-hidden">
@@ -42,7 +58,10 @@ export function Challenge({ title, image, description, mascot }: ChallengeProps)
           </div>
         </CardContent>
         <CardFooter>
-          <Button className="w-full bg-pink-500 hover:bg-pink-600 text-white">
+          <Button 
+            className="w-full bg-pink-500 hover:bg-pink-600 text-white"
+            onClick={handleSubmit}
+          >
             Submit evidence
           </Button>
         </CardFooter>

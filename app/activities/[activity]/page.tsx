@@ -38,6 +38,7 @@ export default function ActivityPage() {
       image={activity.image}
       description={activity.description}
       mascot={activity.mascot}
+      activityId={activityId}
     />
   )
 }
