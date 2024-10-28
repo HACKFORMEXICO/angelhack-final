@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Impact Activities Platform 🌱
+
+A hackathon project that gamifies environmental activities to promote sustainable practices and community engagement.
+
+## Project Overview
+
+Impact Activities Platform is an interactive web application that encourages users to participate in eco-friendly activities while earning rewards. The platform features various environmental challenges that users can complete to make a positive impact on the planet.
+
+## Features
+
+### 🎮 Interactive Activities Menu
+- Dynamic video introduction
+- Engaging nature scene display
+- Challenge cards with visual feedback
+- Three main activities:
+  1. **Cycle for Power** - Generate clean energy through cycling
+  2. **Eco Cooking Class** - Learn sustainable cooking practices
+  3. **Compost Shaking** - Master composting techniques
+
+### 🎯 Key Components
+- Responsive design for all devices
+- Interactive activity cards with hover effects
+- Seamless navigation between challenges
+- Real-time activity tracking
+- Reward system for completed activities
+
+## Technology Stack
+
+- **Frontend Framework**: Next.js 14 (App Router)
+- **Styling**: Tailwind CSS
+- **UI Components**: Custom components with dynamic interactions
+- **Media Handling**: Next.js Image and Video optimization
+- **Navigation**: Next.js App Router
 
 ## Getting Started
 
-First, run the development server:
-
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone [repository-url]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+├── activities/
+│   └── [activity]/
+│       ├── page.tsx
+│       └── submit/
+│           └── page.tsx
+components/
+├── activities-menu.tsx
+├── challenges.tsx
+└── [other-components]
+public/
+└── assets/
+    ├── cycling.png
+    ├── cooking.png
+    ├── composta.png
+    ├── mascota3.png
+    └── lyf.png
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Environmental Impact
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This platform aims to:
+- Promote sustainable living practices
+- Educate users about environmental responsibility
+- Create a community of environmentally conscious individuals
+- Track and reward positive environmental actions
 
-## Deploy on Vercel
+## Future Enhancements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Integration with IoT devices for activity tracking
+- Social features for community engagement
+- Expanded activity catalog
+- Achievement system
+- Mobile app version
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
+
+---
+
+Created for Angel Hack 2024 - Making a difference through technology 🌍
