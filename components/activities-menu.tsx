@@ -65,18 +65,23 @@ export default function ActivitiesMenu() {
 
           {/* Activity Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {['Cycle for power', 'Eco cooking class', 'Compost shaking'].map((activity, index) => (
+            {[
+              { name: 'Cycle for power', image: '/assets/cycling.png' },
+              { name: 'Eco cooking class', image: '/assets/cooking.png' },
+              { name: 'Compost shaking', image: '/assets/composta.png' }
+            ].map((activity, index) => (
               <div key={index} className="bg-[#f2e2ba] rounded-lg overflow-hidden shadow-md">
                 <div className="relative aspect-[4/3]">
                   <Image
-                    src="/placeholder.svg?height=200&width=200"
-                    alt={activity}
-                    layout="fill"
-                    objectFit="cover"
+                    src={activity.image}
+                    alt={activity.name}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
                 <div className="p-4">
-                  <h3 className="font-semibold text-lg mb-2">{activity}</h3>
+                  <h3 className="font-semibold text-lg mb-2">{activity.name}</h3>
                   <p className="text-sm">
                     {index === 0 && 'Reach 100kWh in 30 min of cycling'}
                     {index === 1 && 'Learn the impact of food and cook a delicious, healthy and eco friendly meal'}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { HelpCircle } from 'lucide-react'
+import Image from 'next/image'
 import { DynamicContextProvider, DynamicWidget } from '@dynamic-labs/sdk-react-core'
 import { EthereumWalletConnectors } from '@dynamic-labs/ethereum'
 
@@ -16,7 +16,15 @@ export default function Navbar({ className = '' }: NavbarProps) {
       }}
     >
       <header className={`flex justify-between items-center p-4 bg-[#f2e2ba] ${className}`}>
-        <HelpCircle size={24} className="text-black" />
+        <div className="relative w-24 h-8">
+          <Image
+            src="/assets/login_title.png"
+            alt="Login Title"
+            fill
+            className="object-contain"
+            priority
+          />
+        </div>
         <div className="flex items-center space-x-2">
           <DynamicWidget />
         </div>
