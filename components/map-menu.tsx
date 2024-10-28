@@ -1,6 +1,15 @@
+"use client";
+import { useRouter } from 'next/navigation';
 import Image from 'next/image'
 
 export default function MapMenu() {
+  const router = useRouter();
+
+  const handleCountryClick = (countryName: string) => {
+    console.log(`Navigating to: /map/${countryName.toLowerCase()}`);
+    router.push(`/map/${countryName.toLowerCase()}`);
+  };
+
   const countries = [
     'FRANCE', 'VIETNAM', 'AUSTRIA', 'CHINA', 'GERMANY', 'PHILIPINES',
     'SINGAPORE', 'INDONESIA', 'UK', 'AUSTRALIA', 'THAILAND', 'MEXICO'
@@ -18,6 +27,16 @@ export default function MapMenu() {
             layout="fill"
             objectFit="contain"
             priority
+          />
+          <div 
+            onClick={() => handleCountryClick('Spain')} 
+            className="absolute cursor-pointer hover:opacity-75 transition-opacity"
+            style={{ top: '30%', left: '45%', width: '5%', height: '5%' }}
+          />
+          <div 
+            onClick={() => handleCountryClick('France')} 
+            className="absolute cursor-pointer hover:opacity-75 transition-opacity"
+            style={{ top: '28%', left: '47%', width: '5%', height: '5%' }}
           />
         </div>
 
@@ -37,7 +56,11 @@ export default function MapMenu() {
 
         <div className="grid grid-cols-2 gap-2 text-xs sm:text-sm">
           {countries.map((country, index) => (
-            <div key={index} className="bg-[#f0e6c3] rounded-full py-1 px-3 text-center shadow-sm">
+            <div 
+              key={index} 
+              onClick={() => handleCountryClick(country)}
+              className="bg-[#f0e6c3] rounded-full py-1 px-3 text-center shadow-sm cursor-pointer hover:opacity-75 transition-opacity"
+            >
               {country}
             </div>
           ))}
