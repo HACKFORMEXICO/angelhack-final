@@ -2,8 +2,6 @@
 
 import React from 'react'
 import Image from 'next/image'
-import Navbar from './navbar'
-import Navigation from './navigation'
 
 export default function ActivitiesMenu() {
   return (
