@@ -16,9 +16,9 @@ export default function Navbar({ className = '' }: NavbarProps) {
       }}
     >
       <header className={`flex justify-between items-center p-4 bg-[#f2e2ba] ${className}`}>
-        <div className="relative w-24 h-8">
+        <div className="relative w-32 h-12">
           <Image
-            src="/assets/login_title.png"
+            src="/assets/logo.png"
             alt="Login Title"
             fill
             className="object-contain"

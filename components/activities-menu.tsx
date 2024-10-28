@@ -35,27 +35,27 @@ export default function ActivitiesMenu() {
       )}
 
       {/* Main Content */}
-      <main className="flex-grow overflow-y-auto">
-        <div className="max-w-4xl mx-auto px-4 py-6 space-y-6">
+      <main className="flex-grow overflow-y-auto pt-[64px]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4 sm:py-6 space-y-4 sm:space-y-6">
           {/* Nature Scene */}
           <div className="relative rounded-lg overflow-hidden aspect-video">
             <Image
-              src="/placeholder.svg?height=200&width=400"
+              src="/assets/lyf.png"
               alt="Nature scene"
               layout="fill"
               objectFit="cover"
+              priority
             />
-            <div className="absolute top-4 left-4 font-['More_Sugar',_cursive] text-4xl text-white">lyf</div>
           </div>
 
           {/* Challenge Card */}
-          <div className="bg-[#f2e2ba] rounded-lg p-4 relative min-h-[120px]">
+          <div className="bg-[#f2e2ba] rounded-lg p-3 sm:p-4 relative min-h-[100px] sm:min-h-[120px]">
             <h2 className="font-['Canva_Sans',_sans-serif] text-xl font-bold mb-2 pr-16">
               Find a challenge and start earning!
             </h2>
             <p className="text-sm mb-2 pr-16">Start Impact and earn rewards!</p>
             <Image
-              src="/placeholder.svg?height=80&width=80"
+              src="/assets/mascota3.png"
               alt="Flower mascot"
               width={80}
               height={80}
@@ -64,7 +64,7 @@ export default function ActivitiesMenu() {
           </div>
 
           {/* Activity Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[
               { name: 'Cycle for power', image: '/assets/cycling.png' },
               { name: 'Eco cooking class', image: '/assets/cooking.png' },

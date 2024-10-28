@@ -33,26 +33,37 @@ export function PlayerDashboardComponent() {
               <h3 className="font-bold mb-4">Completed activities</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
-                  { title: 'CYCLE FOR POWER', image: '/placeholder.svg' },
-                  { title: 'ECO COOKING CLASS', image: '/placeholder.svg' },
+                  { 
+                    title: 'CYCLE FOR POWER', 
+                    image: '/assets/cycle_power.png',
+                    mascot: '/assets/mascota1.png'
+                  },
+                  { 
+                    title: 'ECO COOKING CLASS', 
+                    image: '/assets/cooking.png',
+                    mascot: '/assets/mascota2.png'
+                  },
                 ].map((activity, index) => (
                   <Card key={index} className="bg-[#f2e8cf] rounded-lg overflow-hidden">
                     <div className="relative aspect-[4/3]">
                       <Image
                         src={activity.image}
                         alt={activity.title}
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw"
                       />
                     </div>
                     <div className="p-3 flex justify-between items-center">
                       <span className="font-bold">{activity.title}</span>
-                      <Image
-                        src="/placeholder.svg"
-                        alt="Lyf logo"
-                        width={30}
-                        height={30}
-                      />
+                      <div className="relative w-12 h-12">
+                        <Image
+                          src={activity.mascot}
+                          alt="Activity mascot"
+                          fill
+                          className="object-contain"
+                        />
+                      </div>
                     </div>
                   </Card>
                 ))}
