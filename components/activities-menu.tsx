@@ -3,9 +3,32 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { X } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 export default function ActivitiesMenu() {
+  const router = useRouter()
   const [showVideo, setShowVideo] = useState(true)
+
+  const activities = [
+    { 
+      id: 'cycle-for-power',
+      name: 'Cycle for power', 
+      image: '/assets/cycling.png',
+      description: 'Reach 100kWh in 30 min of cycling'
+    },
+    { 
+      id: 'eco-cooking',
+      name: 'Eco cooking class', 
+      image: '/assets/cooking.png',
+      description: 'Learn the impact of food and cook a delicious, healthy and eco friendly meal'
+    },
+    { 
+      id: 'compost-shaking',
+      name: 'Compost shaking', 
+      image: '/assets/composta.png',
+      description: 'Take the compost class and learn sustainable practices'
+    }
+  ]
 
   return (
     <div className="font-['Fira_Sans',_sans-serif] bg-[#d5e6a3] min-h-screen text-[#333] flex flex-col">
@@ -65,12 +88,12 @@ export default function ActivitiesMenu() {
 
           {/* Activity Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {[
-              { name: 'Cycle for power', image: '/assets/cycling.png' },
-              { name: 'Eco cooking class', image: '/assets/cooking.png' },
-              { name: 'Compost shaking', image: '/assets/composta.png' }
-            ].map((activity, index) => (
-              <div key={index} className="bg-[#f2e2ba] rounded-lg overflow-hidden shadow-md">
+            {activities.map((activity) => (
+              <div 
+                key={activity.id} 
+                className="bg-[#f2e2ba] rounded-lg overflow-hidden shadow-md cursor-pointer hover:shadow-lg transition-shadow"
+                onClick={() => router.push(`/activities/${activity.id}`)}
+              >
                 <div className="relative aspect-[4/3]">
                   <Image
                     src={activity.image}
@@ -82,11 +105,7 @@ export default function ActivitiesMenu() {
                 </div>
                 <div className="p-4">
                   <h3 className="font-semibold text-lg mb-2">{activity.name}</h3>
-                  <p className="text-sm">
-                    {index === 0 && 'Reach 100kWh in 30 min of cycling'}
-                    {index === 1 && 'Learn the impact of food and cook a delicious, healthy and eco friendly meal'}
-                    {index === 2 && 'Take the compost class and learn sustainable practices'}
-                  </p>
+                  <p className="text-sm">{activity.description}</p>
                 </div>
               </div>
             ))}

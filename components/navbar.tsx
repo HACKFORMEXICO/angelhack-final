@@ -20,7 +20,8 @@ export default function Navbar({ className = '' }: NavbarProps) {
           <Image
             src="/assets/logo.png"
             alt="Login Title"
-            fill
+            width={128}
+            height={48}
             className="object-contain"
             priority
           />
