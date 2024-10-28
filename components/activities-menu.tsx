@@ -1,11 +1,39 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
+import { X } from 'lucide-react'
 
 export default function ActivitiesMenu() {
+  const [showVideo, setShowVideo] = useState(true)
+
   return (
     <div className="font-['Fira_Sans',_sans-serif] bg-[#d5e6a3] min-h-screen text-[#333] flex flex-col">
+      {/* Video Popup */}
+      {showVideo && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+          <div className="relative bg-white rounded-lg w-full max-w-4xl">
+            <button 
+              onClick={() => setShowVideo(false)}
+              className="absolute -top-3 -right-3 bg-white rounded-full p-1 shadow-lg hover:bg-gray-100 transition-colors"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <div className="relative w-full aspect-video">
+              <video 
+                className="w-full h-full rounded-lg"
+                controls
+                autoPlay
+                muted
+              >
+                <source src="/assets/animacion.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Main Content */}
       <main className="flex-grow overflow-y-auto">
         <div className="max-w-4xl mx-auto px-4 py-6 space-y-6">
