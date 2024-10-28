@@ -22,29 +22,29 @@ interface DashboardActivity {
 export function CountryDashboardComponent({ countryName }: CountryDashboardProps) {
   const [activities, setActivities] = useState<DashboardActivity[]>([])
 
-  // Define all available activities
-  const allActivities = [
-    { 
-      title: 'CYCLE FOR POWER', 
-      image: '/assets/cycling.png',
-      mascot: '/assets/mascota1.png'
-    },
-    { 
-      title: 'ECO COOKING CLASS', 
-      image: '/assets/cooking.png',
-      mascot: '/assets/mascota2.png'
-    },
-    { 
-      title: 'COMPOST SHAKING', 
-      image: '/assets/composta.png',
-      mascot: '/assets/mascota3.png'
-    }
-  ]
-
+  // Define activities inside useEffect to avoid dependency warning
   useEffect(() => {
+    const allActivities = [
+      { 
+        title: 'CYCLE FOR POWER', 
+        image: '/assets/cycling.png',
+        mascot: '/assets/mascota1.png'
+      },
+      { 
+        title: 'ECO COOKING CLASS', 
+        image: '/assets/cooking.png',
+        mascot: '/assets/mascota2.png'
+      },
+      { 
+        title: 'COMPOST SHAKING', 
+        image: '/assets/composta.png',
+        mascot: '/assets/mascota3.png'
+      }
+    ]
+
     // Shuffle and pick random number of activities (1-3)
     const shuffled = [...allActivities].sort(() => 0.5 - Math.random())
-    const numActivities = Math.floor(Math.random() * 3) + 1 // Random number between 1-3
+    const numActivities = Math.floor(Math.random() * 3) + 1
     setActivities(shuffled.slice(0, numActivities))
   }, [])
 

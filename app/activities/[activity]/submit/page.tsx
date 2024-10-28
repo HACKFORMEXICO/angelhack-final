@@ -37,7 +37,6 @@ export default function SubmitPage() {
   const activityId = params.activity as string
   const activity = activities[activityId as keyof typeof activities]
   
-  const [selectedImage, setSelectedImage] = useState<File | null>(null)
   const [previewUrl, setPreviewUrl] = useState<string | null>(null)
   const [isSubmitted, setIsSubmitted] = useState(false)
 
@@ -48,7 +47,6 @@ export default function SubmitPage() {
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (file) {
-      setSelectedImage(file)
       setPreviewUrl(URL.createObjectURL(file))
     }
   }
@@ -136,7 +134,7 @@ export default function SubmitPage() {
                 Congratulations! 🎉
               </h3>
               <p className="text-green-700">
-                You've completed the {activity.title}!
+                You&apos;ve completed the {activity.title}!
               </p>
               <p className="text-green-700 font-bold">
                 Reward: {activity.reward}
