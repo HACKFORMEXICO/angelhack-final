@@ -12,14 +12,14 @@ export default function ActivitiesMenu() {
       {/* Video Popup */}
       {showVideo && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-          <div className="relative bg-white rounded-lg w-full max-w-4xl">
+          <div className="relative bg-white rounded-lg w-full max-w-[500px]">
             <button 
               onClick={() => setShowVideo(false)}
               className="absolute -top-3 -right-3 bg-white rounded-full p-1 shadow-lg hover:bg-gray-100 transition-colors"
             >
               <X className="w-6 h-6" />
             </button>
-            <div className="relative w-full aspect-video">
+            <div className="relative w-full aspect-[9/16]">
               <video 
                 className="w-full h-full rounded-lg"
                 controls
