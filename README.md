@@ -1,4 +1,4 @@
-# Impact Activities Platform 🌱
+# EcoLyf 🌱
 
 A hackathon project that gamifies environmental activities to promote sustainable practices and community engagement.
 
